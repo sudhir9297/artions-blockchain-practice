@@ -1,4 +1,4 @@
-# Basic Sample Hardhat Project
+# Simple NFT marketplace using Hardhat
 
 This is a simple NFT market Place Project to create and buy NFT.
 
