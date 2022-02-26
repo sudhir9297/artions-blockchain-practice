@@ -69,8 +69,83 @@ export default function Home() {
     loadNFTs();
   }
 
-  if (loadingState === "loaded" && !nfts.length)
-    return <h1 className="px-20 py-10 text-3xl">No items in marketplace</h1>;
+  // if (loadingState === "loaded" && !nfts.length)
+  //   return (
+  //     <h1 className="w-screen flex items-center justify-center  message">
+  //       No items in marketplace
+  //     </h1>
+  //   );
+
+  const nftList = [
+    {
+      image: "https://picsum.photos/200/200?random=1",
+      name: "Art 1",
+      description: "Lorem Ipsum",
+      price: "2",
+    },
+    {
+      image: "https://picsum.photos/200/200?random=2",
+      name: "Art 2",
+      description: "Lorem Ipsum",
+      price: "2",
+    },
+    ,
+    {
+      image: "https://picsum.photos/200/200?random=3",
+      name: "Art 3",
+      description: "Lorem Ipsum",
+      price: "2",
+    },
+    ,
+    {
+      image: "https://picsum.photos/200/200?random=4",
+      name: "Art 4",
+      description: "Lorem Ipsum",
+      price: "2",
+    },
+    ,
+    {
+      image: "https://picsum.photos/200/200?random=5",
+      name: "Art 5",
+      description: "Lorem Ipsum",
+      price: "2",
+    },
+    ,
+    {
+      image: "https://picsum.photos/200/200?random=6",
+      name: "Art 6",
+      description: "Lorem Ipsum",
+      price: "2",
+    },
+    ,
+    {
+      image: "https://picsum.photos/200/200?random=7",
+      name: "Art 7",
+      description: "Lorem Ipsum",
+      price: "2",
+    },
+    ,
+    {
+      image: "https://picsum.photos/200/200?random=8",
+      name: "Art 7",
+      description: "Lorem Ipsum",
+      price: "2",
+    },
+    ,
+    {
+      image: "https://picsum.photos/200/200?random=9",
+      name: "Art 8",
+      description: "Lorem Ipsum",
+      price: "2",
+    },
+    ,
+    {
+      image: "https://picsum.photos/200/200?random=10",
+      name: "Art 9",
+      description: "Lorem Ipsum",
+      price: "2",
+    },
+  ];
 
   return (
     <div>
@@ -79,32 +154,43 @@ export default function Home() {
         <meta name="description" content="Marketplace of NFT" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex justify-center">
+      <div className="flex justify-center w-full">
         <div className="px-4" style={{ maxWidth: "1600px" }}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
-            {nfts.map((nft, i) => (
-              <div key={i} className="border shadow rounded-xl overflow-hidden">
-                <img src={nft.image} />
-                <div className="p-4">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-10 pt-4">
+            {nftList.map((nft, i) => (
+              <div
+                key={i}
+                className="w-60 h-80 border shadow rounded-xl overflow-hidden"
+              >
+                <img className="w-full h-40 object-cover" src={nft.image} />
+                <div className="p-2">
                   <p
-                    style={{ height: "64px" }}
+                    style={{ fontSize: "22px" }}
                     className="text-2xl font-semibold"
                   >
                     {nft.name}
                   </p>
-                  <div style={{ height: "70px", overflow: "hidden" }}>
-                    <p className="text-gray-400">{nft.description}</p>
+                  <div style={{ overflow: "hidden" }}>
+                    <p
+                      className="text-gray-400 mb-2"
+                      style={{ color: "#031e2d" }}
+                    >
+                      {nft.description}
+                    </p>
                   </div>
-                </div>
-                <div className="p-4 bg-black">
-                  <p className="text-2xl mb-4 font-bold text-white">
-                    {nft.price} MATIC
-                  </p>
-                  <button
-                    className="w-full bg-pink-500 text-white font-bold py-2 px-12 rounded"
-                    onClick={() => buyNft(nft)}
+                  <p
+                    className="text-sm mb-2 font-bold"
+                    style={{ color: "grey" }}
                   >
-                    Buy
+                    <span style={{ color: "#031e2d" }}>Price :</span>{" "}
+                    {nft.price} MATIC
+                  </p>{" "}
+                  <button
+                    className="w-full bg-pink-500 text-white font-bold py-2  rounded-full"
+                    onClick={() => buyNft(nft)}
+                    style={{ background: "#000" }}
+                  >
+                    Buy Now
                   </button>
                 </div>
               </div>

@@ -56,12 +56,16 @@ export default function CreatorDashboard() {
   }
 
   if (loadingState === "loaded" && !nfts.length)
-    return <h1 className="py-10 px-20 text-3xl">No assets created</h1>;
+    return (
+      <h1 className="message flex items-center justify-center  w-full">
+        No assets created
+      </h1>
+    );
 
   return (
-    <div>
-      <div className="p-4">
-        <h2 className="text-2xl py-2">Items Created</h2>
+    <div className="w-full">
+      <div className="p-4 ">
+        <h2 className="header">Items Created</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
           {nfts.map((nft, i) => (
             <div key={i} className="border shadow rounded-xl overflow-hidden">

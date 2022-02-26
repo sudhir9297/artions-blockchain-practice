@@ -1,3 +1,64 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "logoFont";
+  src: url("/logoFont.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+body {
+  height: 100vh;
+  background-color: #fbfbfb;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 32px;
+  font-family: "logoFont";
+}
+
+.logo span {
+  padding: 2px;
+  background: -webkit-linear-gradient(
+    90deg,
+    #0560fd 0%,
+    #0560fd 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.optionContainer {
+  display: flex;
+  margin: 15px 0px;
+  padding: 5px 15px;
+  align-items: center;
+  color: #031e2d;
+  width: inherit;
+}
+
+.active {
+  border-right: 3px solid #0560fd;
+}
+
+.optionName {
+  cursor: pointer;
+}
+
+.message {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ff007a;
+}
+
+.header {
+  margin: 10px;
+  font-size: 25px;
+  font-weight: 600;
+  color: #000;
+}
