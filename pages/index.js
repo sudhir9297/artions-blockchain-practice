@@ -69,83 +69,12 @@ export default function Home() {
     loadNFTs();
   }
 
-  // if (loadingState === "loaded" && !nfts.length)
-  //   return (
-  //     <h1 className="w-screen flex items-center justify-center  message">
-  //       No items in marketplace
-  //     </h1>
-  //   );
-
-  const nftList = [
-    {
-      image: "https://picsum.photos/200/200?random=1",
-      name: "Art 1",
-      description: "Lorem Ipsum",
-      price: "2",
-    },
-    {
-      image: "https://picsum.photos/200/200?random=2",
-      name: "Art 2",
-      description: "Lorem Ipsum",
-      price: "2",
-    },
-    ,
-    {
-      image: "https://picsum.photos/200/200?random=3",
-      name: "Art 3",
-      description: "Lorem Ipsum",
-      price: "2",
-    },
-    ,
-    {
-      image: "https://picsum.photos/200/200?random=4",
-      name: "Art 4",
-      description: "Lorem Ipsum",
-      price: "2",
-    },
-    ,
-    {
-      image: "https://picsum.photos/200/200?random=5",
-      name: "Art 5",
-      description: "Lorem Ipsum",
-      price: "2",
-    },
-    ,
-    {
-      image: "https://picsum.photos/200/200?random=6",
-      name: "Art 6",
-      description: "Lorem Ipsum",
-      price: "2",
-    },
-    ,
-    {
-      image: "https://picsum.photos/200/200?random=7",
-      name: "Art 7",
-      description: "Lorem Ipsum",
-      price: "2",
-    },
-    ,
-    {
-      image: "https://picsum.photos/200/200?random=8",
-      name: "Art 7",
-      description: "Lorem Ipsum",
-      price: "2",
-    },
-    ,
-    {
-      image: "https://picsum.photos/200/200?random=9",
-      name: "Art 8",
-      description: "Lorem Ipsum",
-      price: "2",
-    },
-    ,
-    {
-      image: "https://picsum.photos/200/200?random=10",
-      name: "Art 9",
-      description: "Lorem Ipsum",
-      price: "2",
-    },
-  ];
+  if (loadingState === "loaded" && !nfts.length)
+    return (
+      <h1 className="w-screen flex items-center justify-center  message">
+        No items in marketplace
+      </h1>
+    );
 
   return (
     <div>
@@ -157,7 +86,7 @@ export default function Home() {
       <div className="flex justify-center w-full">
         <div className="px-4" style={{ maxWidth: "1600px" }}>
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-10 pt-4">
-            {nftList.map((nft, i) => (
+            {nfts.map((nft, i) => (
               <div
                 key={i}
                 className="w-60 h-80 border shadow rounded-xl overflow-hidden"
